@@ -1,0 +1,153 @@
+﻿@model M_U_Alim_Madrasa.Models.Students
+@{
+    ViewData["Title"] = "CreateStudent";
+}
+
+<h2>Add New Student</h2>
+<br />
+<br />
+<form method="post">
+    <div style="border:1px dotted black; border-radius:10px;">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row" style="padding:30px;">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <label asp-for="Roll"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="Roll" />
+                    </div>
+                    <span asp-validation-for="Roll" class="text-danger"></span>
+                    <div class="col-sm-1">
+                        <label asp-for="Name"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="Name" />
+                    </div>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <label asp-for="BloodGroup"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="BloodGroup" />
+                    </div>
+                    <span asp-validation-for="BloodGroup" class="text-danger"></span>
+                    <div class="col-sm-1">
+                        <label asp-for="Class"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="Class" />
+                    </div>
+                    <span asp-validation-for="Class" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <label asp-for="Section"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="Section" />
+                    </div>
+                    <span asp-validation-for="Section" class="text-danger"></span>
+                    <div class="col-sm-1">
+                        <label asp-for="JSCResult"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="JSCResult" />
+                    </div>
+                    <span asp-validation-for="JSCResult" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <label asp-for="SSCResult"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="SSCResult" />
+                    </div>
+                    <span asp-validation-for="SSCResult" class="text-danger"></span>
+                    <div class="col-sm-1">
+                        <label asp-for="BirthDate"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="date" asp-for="BirthDate" />
+                    </div>
+                    <span asp-validation-for="BirthDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <label asp-for="Address"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="Address" />
+                    </div>
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                    <div class="col-sm-1">
+                        <label asp-for="Mobile"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="Mobile" />
+                    </div>
+                    <span asp-validation-for="Mobile" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <label asp-for="Email"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="Email" />
+                    </div>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                    <div class="col-sm-1">
+                        <label asp-for="FatherName"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="FatherName" />
+                    </div>
+                    <span asp-validation-for="FatherName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <label asp-for="MotherName"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="MotherName" />
+                    </div>
+                    <span asp-validation-for="MotherName" class="text-danger"></span>
+                    <div class="col-sm-1">
+                        <label asp-for="GardianMobile">Home Cell</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="GardianMobile" />
+                    </div>
+                    <span asp-validation-for="GardianMobile" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-primary">Back To List</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section scripts
+{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

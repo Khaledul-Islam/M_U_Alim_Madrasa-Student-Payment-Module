@@ -1,0 +1,87 @@
+﻿@model IEnumerable<M_U_Alim_Madrasa.Models.Payment>
+@{
+    ViewData["Title"] = "Invoice";
+}
+
+<h2>Payment List</h2>
+<br />
+<form asp-action="Invoice" method="get">
+    <div class="form-group">
+        <div class="col-sm-2">
+            <input placeholder="Enter Roll" type="text" name="searchString">
+        </div>
+        <div class="col-sm-3">
+            <input class="btn btn-primary btn-sm" type="submit" value="Search" />
+        </div>
+    </div>
+</form>
+<br />
+<br />
+<form method="post" asp-action="Invoice">
+    @if (TempData["message"] != null)
+    {
+        <div class="alert alert-info alert-dismissable" role="alert">
+            <button class="close" aria-label="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            @TempData["message"]
+        </div>
+    }
+    <br />
+    @if (Model.Count() > 0)
+    {
+        <table class="table table-striped">
+            <tr>
+                <th>@Html.DisplayNameFor(p => p.FirstOrDefault().Roll)</th>
+                <th>@Html.DisplayNameFor(p => p.FirstOrDefault().Date)</th>
+                <th>@Html.DisplayNameFor(p => p.FirstOrDefault().TuitionFees)</th>
+                <th>@Html.DisplayNameFor(p => p.FirstOrDefault().AdmissionFees)</th>
+                <th>@Html.DisplayNameFor(p => p.FirstOrDefault().HealthFees)</th>
+                <th>@Html.DisplayNameFor(p => p.FirstOrDefault().SportsFees)</th>
+                <th>@Html.DisplayNameFor(p => p.FirstOrDefault().ExamFees)</th>
+                <th>@Html.DisplayNameFor(p => p.FirstOrDefault().Others)</th>
+                <th>@Html.DisplayNameFor(p => p.FirstOrDefault().Total)</th>
+                <th>@Html.DisplayNameFor(p => p.FirstOrDefault().Paid)</th>
+                <th>@Html.DisplayNameFor(p => p.FirstOrDefault().Due)</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m => item.Roll)</td>
+                    <td>@Html.DisplayFor(m => item.Date)</td>
+                    <td>@Html.DisplayFor(m => item.TuitionFees)</td>
+                    <td>@Html.DisplayFor(m => item.AdmissionFees)</td>
+                    <td>@Html.DisplayFor(m => item.HealthFees)</td>
+                    <td>@Html.DisplayFor(m => item.SportsFees)</td>
+                    <td>@Html.DisplayFor(m => item.ExamFees)</td>
+                    <td>@Html.DisplayFor(m => item.Others)</td>
+                    <td>@Html.DisplayFor(m => item.Total)</td>
+                    <td>@Html.DisplayFor(m => item.Paid)</td>
+                    <td>@Html.DisplayFor(m => item.Due)</td>
+                    <td>
+                        @if (item.Due > 0)
+                        {
+                            <partial name="_PaymentDetailsButton" model="@item.ID" />
+                        }
+                        else
+                        {
+                        <td>Paid</td>
+                    }
+
+                <td>
+                    <partial name="_PaymentDetailsButtonTwo" model="@item.ID" />
+                </td>
+                    </tr>
+                }
+        </table>
+    }
+    else
+    {
+        <div>not available</div>
+    }
+
+</form>

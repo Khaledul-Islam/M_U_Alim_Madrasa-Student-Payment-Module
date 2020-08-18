@@ -1,0 +1,113 @@
+﻿@model M_U_Alim_Madrasa.Models.Payment
+@{
+    ViewData["Title"] = "PaymentDetails";
+}
+    <div style="text-align:center;">
+        <h3>Fees Receipt</h3>
+        <h1> M U Alim Madrasha</h1>
+        <p>Ashulia Uttar GazirChat,Madrasha Road</p>
+
+    </div>
+<form method="post">
+    <div style="border:1px dotted black; border-radius:5px;">
+
+        <input type="hidden" asp-for="Total" />
+        <input type="hidden" asp-for="Due" />
+
+        <div class="row" style="padding:30px;">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <label asp-for="Roll"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input disabled asp-for="Roll" />
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <label asp-for="TuitionFees"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input disabled asp-for="TuitionFees" />
+                    </div>
+
+                    <div class="col-sm-1">
+                        <label asp-for="AdmissionFees"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input disabled asp-for="AdmissionFees" />
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <label asp-for="HealthFees"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input disabled asp-for="HealthFees" />
+                    </div>
+
+                    <div class="col-sm-1">
+                        <label asp-for="SportsFees"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input disabled asp-for="SportsFees" />
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <label asp-for="ExamFees"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input disabled asp-for="ExamFees" />
+                    </div>
+
+                    <div class="col-sm-1">
+                        <label asp-for="Others"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input disabled asp-for="Others" />
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <label asp-for="Date"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input disabled asp-for="Date" />
+                    </div>
+
+
+                    <div class="col-sm-1">
+                        <label asp-for="Paid">Paid Amount</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input disabled asp-for="Paid" />
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary btn-sm hidden-print"
+                       id="btnPrint" name="btnPrint" type="button" value="Print" onclick="window.print()" />
+                <a asp-action="Invoice" class="btn btn-primary btn-sm hidden-print">Back</a>
+            </div>
+        </div>
+    </div>
+</form>
+

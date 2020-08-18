@@ -1,0 +1,131 @@
+﻿@model M_U_Alim_Madrasa.Models.Students
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Student Details</h2>
+<br />
+<br />
+<form method="post" asp-action="Delete">
+<div style="border:1px dotted black; border-radius:10px;">
+    <input type="hidden" asp-for="ID" />
+    <div class="row" style="padding:30px;">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    <label asp-for="Roll"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input disabled asp-for="Roll" />
+                </div>
+                <div class="col-sm-1">
+                    <label asp-for="Name"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input disabled asp-for="Name" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    <label asp-for="BloodGroup"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input disabled asp-for="BloodGroup" />
+                </div>
+                <div class="col-sm-1">
+                    <label asp-for="Class"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input disabled asp-for="Class" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    <label asp-for="Section"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input disabled asp-for="Section" />
+                </div>
+                <div class="col-sm-1">
+                    <label asp-for="JSCResult"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input disabled asp-for="JSCResult" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    <label asp-for="SSCResult"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input disabled asp-for="SSCResult" />
+                </div>
+                <div class="col-sm-1">
+                    <label asp-for="BirthDate"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input disabled asp-for="BirthDate" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    <label asp-for="Address"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input disabled asp-for="Address" />
+                </div>
+                <div class="col-sm-1">
+                    <label asp-for="Mobile"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input disabled asp-for="Mobile" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    <label asp-for="Email"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input disabled asp-for="Email" />
+                </div>
+                <div class="col-sm-1">
+                    <label asp-for="FatherName"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input disabled asp-for="FatherName" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    <label asp-for="MotherName"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input disabled asp-for="MotherName" />
+                </div>
+                <div class="col-sm-1">
+                    <label asp-for="GardianMobile">Home Cell</label>
+                </div>
+                <div class="col-sm-4">
+                    <input disabled asp-for="GardianMobile" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button asp-route-id="@Model.ID" class="btn btn-danger">Delete</button>
+            <a asp-action="Index" class="btn btn-primary">Back To List</a>
+        </div>
+    </div>
+</div>
+</form>
